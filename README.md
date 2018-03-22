@@ -21,4 +21,5 @@ npm start
 * Redux
 * ReactRedux
 * Proptypes
+* React CSS Modules
 
