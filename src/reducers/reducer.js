@@ -5,28 +5,16 @@ const initialState = {
 };
 
 const reducer = ( state = initialState, action ) => {
+    const count = state.counter;
     switch ( action.type ) {
         case actionTypes.INCREMENT:
+            console.log("actionTypes.INCREMENT");
             return {
-                count: state.counter + 1
+                counter: count + 1
             }
         default:
+            console.log("default time");
         	return state;
-        /*case actionTypes.ADD_PERSON:
-            const newPerson = {
-                id: Math.random(), // not really unique but good enough here!
-                name: 'Max',
-                age: Math.floor( Math.random() * 40 )
-            }
-            return {
-                ...state,
-                counter: state.counter.concat( newPerson )
-            }*/
-        /*case actionTypes.REMOVE_PERSON:
-            return {
-                ...state,
-                counter: state.counter.filter(person => person.id !== action.personId)
-            }*/
     }
 };
 

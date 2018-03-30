@@ -19,7 +19,7 @@ import { createStore } from 'redux';
 import reducer from './reducers/reducer';
 import { INCREMENT } from "./constants/action-types";
 const defaultState = {
-	count: 0
+	counter: 0
 }
 const store = createStore(reducer, defaultState);
 
@@ -33,10 +33,13 @@ const store = createStore(reducer, defaultState);
 *
 * Source: https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tutorial_who_this_guide_is_for
 */
-window.someStore = store;
 
-export const addArticle = counter => ({ type: INCREMENT});
-window.someAddArticle = addArticle;
+// React Question: I don't understand this ES6 here
+export const increaseNumber = counter => ({ type: INCREMENT});
+
+// Making global variables to make accessible in the Console (???)
+window.testStore = store;
+window.testIncreaseNumber = increaseNumber;
 
 // const store = createStore(reducer);
 
