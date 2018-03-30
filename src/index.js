@@ -17,7 +17,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import reducer from './reducers/reducer';
-import { INCREMENT } from "./constants/action-types";
+import { INCREMENT, DECREMENT } from "./constants/action-types";
 const defaultState = {
 	counter: 0
 }
@@ -36,12 +36,12 @@ const store = createStore(reducer, defaultState);
 
 // React Question: I don't understand this ES6 here
 export const increaseNumber = counter => ({ type: INCREMENT});
+export const decreaseNumber = counter => ({ type: DECREMENT});
 
 // Making global variables to make accessible in the Console (???)
 window.testStore = store;
 window.testIncreaseNumber = increaseNumber;
-
-// const store = createStore(reducer);
+window.testDecreaseNumber = decreaseNumber;
 
 ReactDOM.render(
 	<Provider store={store}>
