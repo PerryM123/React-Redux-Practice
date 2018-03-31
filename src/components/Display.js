@@ -11,7 +11,7 @@ class Display extends Component {
       <div>
         <div className="valueBox">
 			<div className="value">{this.props.value}</div>
-			<input type="button" value="+" onClick={this.clickHandler} />
+			<input type="button" value="+" onClick={this.props.clickHandler} />
         </div>
         <OddEvenMessage value={this.props.value} />
       </div>
@@ -35,7 +35,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   console.log("mapDispatchToProps");
   return {
-    clickHandler: () => dispatch(increaseValue)
+    clickHandler: () => dispatch(increaseValue())
   }
 }
 
