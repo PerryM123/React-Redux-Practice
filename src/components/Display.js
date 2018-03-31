@@ -4,40 +4,39 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import {increaseValue} from './../actions/index';
 
-
-// Map Redux state to component props
-function mapStateToProps(state) {
-  return {
-    value: state.count
-  }
-}
-
-// Map Redux actions to component props
-function mapDispatchToProps(dispatch) {
-  return {
-    clickHandler: () => dispatch(increaseValue)
-  }
-}
-
 class Display extends Component {
   render() {
   	const { value, clickHandler } = this.props;
     return (
       <div>
         <div className="valueBox">
-			<div className="value">{this.state.value}</div>
+			<div className="value">{this.props.value}</div>
 			<input type="button" value="+" onClick={this.clickHandler} />
         </div>
-        <OddEvenMessage value={this.state.value} />
+        <OddEvenMessage value={this.props.value} />
       </div>
     );
   }
 }
 
-Display.propTypes = {
-  value: PropTypes.number.isRequired,
-  clickHandler: PropTypes.func.isRequired
-}
-const App = connect(mapStateToProps, mapDispatchToProps)(Display);
+// Display.propTypes = {
+//   value: PropTypes.number.isRequired,
+//   clickHandler: PropTypes.func.isRequired
+// }
 
-export default Display;
+// Map Redux state to component props
+function mapStateToProps(state) {
+  return {
+    value: state.counter
+  }
+}
+
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+  console.log("mapDispatchToProps");
+  return {
+    clickHandler: () => dispatch(increaseValue)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Display);

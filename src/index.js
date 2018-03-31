@@ -19,7 +19,7 @@ import { createStore } from 'redux';
 import reducer from './reducers/reducer';
 import { INCREMENT, DECREMENT } from "./constants/action-types";
 const defaultState = {
-	counter: 0
+	counter: 5
 }
 const store = createStore(reducer, defaultState);
 
