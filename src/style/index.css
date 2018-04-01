@@ -1,0 +1,28 @@
+.app-container {
+	border: 2px solid #000;
+    max-width: 320px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.oddeven {
+	font-size: 40px;
+}
+
+.value {
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;	
+	font-size: 100px;
+}
+
+.valueBox input {
+    font-size: 70px;
+    width: 100px;
+    margin: 5px;
+}
+
+.inputArea {
+    padding: 20px 0;
+    border-bottom: 2px solid #000;
+}

@@ -5,7 +5,7 @@ class OddEvenMessage extends Component {
   render() {
 	var value = this.props.value;
     return (
-      <div>
+      <div className="oddeven">
         {
         	/*
         	* React Question:

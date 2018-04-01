@@ -1,6 +1,6 @@
 
 
-import { INCREMENT } from "./../constants/action-types";
+import { INCREMENT, DECREMENT} from "./../constants/action-types";
 
 /*
 
@@ -18,5 +18,5 @@ https://www.valentinog.com/blog/react-redux-tutorial-beginners/#React_Redux_tuto
 
 // export const INCREMENT = 'INCREMENT';
 
-
 export const increaseValue = () => ({ type: INCREMENT });
+export const decreaseValue = () => ({ type: DECREMENT });
