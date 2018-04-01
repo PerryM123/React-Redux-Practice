@@ -15,13 +15,20 @@ import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers/reducer';
 import { INCREMENT, DECREMENT } from "./constants/action-types";
+
 const defaultState = {
 	counter: 5
 }
-const store = createStore(reducer, defaultState);
+
+const middlewareLogger = (store) => (next) => (action) => {
+	console.log("Logged Action", action);
+	next(action);
+}
+
+const store = createStore(reducer, defaultState, applyMiddleware(middlewareLogger));
 
 /*
 * This is used for testing Redux?

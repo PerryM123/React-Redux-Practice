@@ -33,7 +33,6 @@ function mapStateToProps(state) {
 
 // Map Redux actions to component props
 function mapDispatchToProps(dispatch) {
-  console.log("mapDispatchToProps");
   return {
     clickHandler: () => dispatch(increaseValue())
   }
